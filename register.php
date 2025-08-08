@@ -2,24 +2,26 @@
 
 require_once('db.php');
 
+$name = $_POST['name'];
+$email = $_POST['email'];
+$passwd = $_POST['pass'];
+$passwd_conf = $_POST['pass_conf'];
 
-$login = $_POST['user_name'];
-$password = $_POST['user_passwd'];
-$password_conf = $_POST['user_passwd_conf'];
-$email = $_POST['user_email'];
 
-if (empty($login) or empty($email) or empty($password) or empty($password_conf)) {
-    echo "Заполните все поля";
-} else {
-    if ($password != $password_conf) {
-        echo "Пароли не совпадают";
-    } else {
-        $sql = "INSERT INTO `Users` (login,passwd,email) VALUES ('$login','$password','$email')";
-        if ($conn -> query($sql)) {
-            echo "Успешная регистррация";
+$sql = "INSERT INTO `Users` (login,passwd,email) VALUES('$name','$email','$passwd')";
 
-        } else {
-            "Ошибка: ". $conn->error;
+if(empty($name) or empty($email) or empty($passwd) or empty($passwd_conf)){
+    echo "Ошибка: Заполните все поля";
+}else{
+    if($passwd != $passwd_conf){
+        echo "Ошибка: Пароли не свопадают";
+    }else{
+        $sql = "INSERT INTO `Users` (login,passwd,email) VALUES('$name','$email','$passwd')";
+        if($conn -> query($sql)){
+            echo "Успешная регистрация";
+        }
+        else{
+            echo "Ошибка: ". $conn->error;
         }
     }
 }

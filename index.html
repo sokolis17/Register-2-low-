@@ -7,16 +7,16 @@
 <body>
     <h2>Введите данные</h2>
     <form action="register.php" method="post" novalidate>
-        <input type="name" name="user_name" placeholder="Введите ваш ник" required style="text-align: center;display: block;">
-        <input type="password" name="user_passwd" placeholder="Введите ваш пароль" required style="text-align: center;display: block;">
-        <input type="password" name="user_passwd_conf" placeholder="Повторите пароль" required style="text-align: center;display: block;">
-        <input type="email" name="user_email" placeholder="email" required style="text-align: center;display: block;">
+        <input type="name" name ="name" placeholder="Иван" style="display: block;text-align: center;">
+        <input type="email" name ="email" placeholder="example@bk.ru" style="display: block;text-align: center;">
+        <input type="password" name ="pass" placeholder="Ваш пароль" style="display: block;text-align: center;">
+        <input type="password" name ="pass_conf" placeholder="Повторите пароль" style="display: block;text-align: center;">
         <button type="submit">Зарегистрироваться</button>
-    </form>
+    </form> 
 
     <form action="login.php" method="post">
-        <input type="name" name="user_log" placeholder="Введите ваш ник" required style="text-align: center;display: block;">
-        <input type="password" name="user_passwd" placeholder="Введите ваш пароль" required style="text-align: center;display: block;">
+        <input type="name" name ="login" placeholder="Введите ваш Ник" style="display: block;text-align: center;">
+        <input type="password" name ="pass" placeholder="Ваш пароль" style="display: block;text-align: center;">
         <button type="submit">Войти</button>
     </form>
 </body>
